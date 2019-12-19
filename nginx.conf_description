@@ -7,3 +7,15 @@ worker_processes auto;
 This defined that 5 worker process will run
 default worker process will 1
 auto defined that worker_process depends on cpu, like if cpu 2 then worker_process will be 2
+
+error_log  /var/log/nginx/error.log;
+path for error logs
+
+pid        logs/nginx.pid;
+
+nginx process id in location
+
+
+
+
+
