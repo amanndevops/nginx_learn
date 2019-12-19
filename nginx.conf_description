@@ -1,0 +1,9 @@
+user  www-data 
+This defined nginx will run with this user 
+Default user will 'nobody'
+
+worker_processes  5; 
+worker_processes auto;
+This defined that 5 worker process will run
+default worker process will 1
+auto defined that worker_process depends on cpu, like if cpu 2 then worker_process will be 2
