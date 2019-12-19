@@ -15,6 +15,20 @@ pid        logs/nginx.pid;
 
 nginx process id in location
 
+worker_connections  4096;  ## Default: 1024
+
+Sets the maximum number of simultaneous connections that can be opened by a worker process.
+
+include /etc/nginx/conf.d/*.conf;
+include /etc/nginx/sites-enabled/*;
+
+This will include all nginx configuration file that have virtual hosting 
+
+client_max_body_size 200M;
+
+maximum file upload size can be 200MB via user
+
+
 
 
 
