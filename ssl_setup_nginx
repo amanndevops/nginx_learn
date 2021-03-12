@@ -1,0 +1,27 @@
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt install python-certbot-nginx
+sudo certbot --nginx -d example.com -d www.example.com
+sudo certbot renew
+
+
+
+server { 
+    listen 80;
+    server_name  example.com;
+    return 301 https://example.com$request_uri;
+}
+
+ 
+ server{
+     listen 443 ssl;
+     server_name  awsjenkins.echodigital.org;
+     ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+ 
+    location / {
+ proxy_pass http://localhost:8080;  
+ }
+
+}
