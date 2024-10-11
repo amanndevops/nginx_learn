@@ -2,6 +2,7 @@
 # Ans. SSL Certbot is a tool that helps you obtain and manage SSL/TLS certificates from Let's Encrypt for your website. When used with Nginx, Certbot automates the process of securing your site with HTTPS, including.
 
 # How to Use Certbot with Nginx?
+
 # 1. update  for system
  sudo apt update
 
@@ -10,6 +11,7 @@ sudo apt install certbot python3-certbot-nginx
  
 # 3.Obtain an SSL Certificate 
 sudo certbot --nginx -d your_domain -d www.your_domain
+
 # 4. Test Nginx Configuration
 sudo nginx -t
 
